@@ -1,6 +1,6 @@
 {
   "name": "tailwind-config-viewer",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "View your Tailwind CSS config file...visually!",
   "author": {
     "name": "Ryan Ogden",
@@ -8,8 +8,8 @@
   },
   "scripts": {
     "serve": "node cli/index.js -c tailwind.config.sample.js & vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build:docs": "npm run build && node ./cli export ./docs -c tailwind.config.sample.js",
+    "build": "node init && vue-cli-service build",
+    "build:docs": "node init && npm run build && node ./cli export ./docs -c tailwind.config.sample.js",
     "prepublishOnly": "npm run lint --no-fix && npm run build",
     "lint": "vue-cli-service lint",
     "test": "echo \"No test specified\"",
